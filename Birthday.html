@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Met Ultah Bro! 🎉</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ffeb3b;
+            text-align: center;
+            padding: 50px;
+            overflow-x: hidden;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 0px #000;
+            border: 4px solid #000;
+            display: inline-block;
+            max-width: 500px;
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 3rem;
+            text-shadow: 2px 2px #000;
+        }
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: 3px solid #000;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #000;
+            margin: 10px;
+            transition: 0.1s;
+        }
+        .btn:active {
+            box-shadow: 0px 0px 0px #000;
+            transform: translate(4px, 4px);
+        }
+        /* Tombol kabur */
+        #btn-kabur {
+            position: absolute;
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- BISA DIGANTI: Nama temanmu -->
+        <h1>HBD SUPRI! 🎉</h1>
+        <p>Selamat berkurang umur! Udah makin tua, kerutan makin banyak, tapi jatah traktiran belum keliatan nih. 💸</p>
+        
+        <hr style="border: 2px dashed #000;">
+        
+        <p>Jawab jujur, lu ngerasa makin tua gak?</p>
+        <button class="btn" onclick="iyaDong()">Iya, jompo banget</button>
+        <button class="btn" onclick="iyaDong()">Sangat iya</button>
+
+        <br><br>
+        <p>Mau hadiah mentahan ga?</p>
+        <!-- Tombol prank yang bakal kabur terus -->
+        <button class="btn" id="btn-kabur" onmouseover="kaburYuk()">KLIK DI SINI MAU HADIAH</button>
+    </div>
+
+    <!-- Lagu jedag-jedog pelengkap penderitaan, ganti src kalau mau lagu lain -->
+    <iframe src="https://youtube.com" style="display:none;" id="musik"></iframe>
+
+    <script>
+        // Fungsi kalau dia klik tombol iya
+        function iyaDong() {
+            alert("Baguslah kalau sadar diri. Ditunggu traktirannya ya sepuh! 🦖💨");
+        }
+
+        // Fungsi rahasia biar tombolnya kabur terus saat didekati mouse
+        function kaburYuk() {
+            const tombol = document.getElementById('btn-kabur');
+            
+            // Mengacak posisi tombol di layar agar tidak bisa diklik
+            const x = Math.random() * (window.innerWidth - tombol.clientWidth - 50);
+            const y = Math.random() * (window.innerHeight - tombol.clientHeight - 50);
+            
+            tombol.style.left = x + 'px';
+            tombol.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
